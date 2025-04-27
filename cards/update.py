@@ -16,8 +16,18 @@ async def update(ctx):
     await ctx.send("You are not authorized to use this command.")
     return
   
-  # Run the external Go script
-  subprocess.Popen(["go", "run", "../update.go"])
+  # Change directory to one folder above
+  os.chdir("..")
+
+  # Run the command `go run update.go`
+  await ctx.send("Updating...")
+  process = subprocess.run(["go", "run", "update.go"], capture_output=True, text=True)
+
+  # Send the output of the command to the Discord channel
+  if process.returncode == 0:
+    await ctx.send(f"Command executed successfully:\n{process.stdout}")
+  else:
+    await ctx.send(f"Command failed with error:\n{process.stderr}")
 
   # Kill the current process
   await ctx.send("Shutting down the current process...")

@@ -28,9 +28,8 @@ async def on_ready():
   global guilds
   print(f'Logged in as {bot.user}')
 
-  # for guild in guilds:
-  #   channel = bot.get_channel(int(guild))
-  #   await channel.send("It's time to d-d-d-d-d-duel")
+  channel = bot.get_channel(847293815311826954)
+  await channel.send("It's time to d-d-d-d-d-duel")
 
 
 async def setup(bot):
@@ -63,7 +62,7 @@ async def setup(bot):
   await bot.load_extension("say")
   await bot.load_extension("stats")
   await bot.load_extension("update")
-  
+
 @bot.event
 async def on_message(message):
   await bot.process_commands(message)
