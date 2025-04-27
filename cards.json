@@ -85,7 +85,8 @@
     "Mana": 1,
     "Attack": null,
     "Defense": null,
-    "Speed": null
+    "Speed": null,
+    "Description": ""
   },
   "Volcano": {
     "Type": "Land",
@@ -93,7 +94,8 @@
     "Mana": 2,
     "Attack": null,
     "Defense": null,
-    "Speed": null
+    "Speed": null,
+    "Description": ""
   },
   "Phoenix": {
     "Type": "Attacker",
@@ -125,7 +127,8 @@
     "Mana": 1,
     "Attack": null,
     "Defense": null,
-    "Speed": null
+    "Speed": null,
+    "Description": ""
   },
   "Delta": {
     "Type": "Land",
@@ -133,7 +136,8 @@
     "Mana": 2,
     "Attack": null,
     "Defense": null,
-    "Speed": null
+    "Speed": null,
+    "Description": ""
   },
   "Shark": {
     "Type": "Attacker",

@@ -260,10 +260,7 @@ async def begin_duel(ctx, player: str, opponent: str):
                            value=players[opponent]["curr_mana"],
                            inline=False)
 
-  #
-  # hack to get around swapping turns
-  get_random_card_for(player)
-  for _ in range(4):
+  for _ in range(5):
     get_random_card_for(player)
     get_random_card_for(opponent)
 
@@ -300,6 +297,9 @@ async def begin_duel(ctx, player: str, opponent: str):
                               name="Your Hand",
                               value=", ".join(players[opponent]["hand"]),
                               inline=False)
+
+  # draw for start of turn
+  get_random_card_for(opponent)
 
   # send to players
   p_dm = await get_dm(player)
@@ -383,7 +383,7 @@ async def swap_turns(ctx, player: str, opponent: str):
 async def inc_level(ctx, player: str):
   level = players[player]["level"]
   next_level = 4 * (level * (level + 1)) // 2
-  wins = players[player]["wins"] + (2 * players[player]["tied"] // 3) + (players[player]["lost"] // 3)
+  wins = players[player]["won"] + (2 * players[player]["tied"] // 3) + (players[player]["lost"] // 3)
 
   if wins >= next_level:
     dm = await get_dm(player)

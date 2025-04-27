@@ -41,4 +41,4 @@ async def discard(ctx):
 
   players[player]["hand"].remove(card)
   save()
-  await print_cmd(player, "discard")
+  await print_cmd(player, message.content)

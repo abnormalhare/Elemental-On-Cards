@@ -50,4 +50,4 @@ async def newdeck(ctx):
       players[player]["inventory"] += [card] * collection[deck][card]
   save()
   await ctx.send(f"Deck **{deck}** set.")
-  await print_cmd(player, "newdeck")
+  await print_cmd(player, message.content)

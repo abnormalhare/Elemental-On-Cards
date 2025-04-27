@@ -40,4 +40,3 @@ async def deck(ctx):
             inline=False)
 
   await ctx.send(embed=embed)
-  await print_cmd(str(ctx.author.id), "deck")

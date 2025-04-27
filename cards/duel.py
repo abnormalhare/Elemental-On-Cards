@@ -129,6 +129,8 @@ async def duel(ctx):
       players[opponent]["in_duel"] = False
       players[opponent]["opponents"] = []
       await ctx.send(f"Duel with <@{opponent}> has been aborted.")
+      opp_dm = await get_dm(opponent)
+      await opp_dm.send(f"<@{player}> has aborted the duel.")
       save()
     else:
       await ctx.send("You are already in a duel!")
@@ -156,4 +158,4 @@ async def duel(ctx):
   else:
     await duel_player(ctx, player, opponents, split[1])
   save()
-  await print_cmd(player, "duel")
+  await print_cmd(player, ctx.message.content)

@@ -29,4 +29,4 @@ async def endturn(ctx):
     return
 
   await swap_turns(ctx, player, opponent)
-  await print_cmd(player, "endturn")
+  await print_cmd(player, ctx.message.content)

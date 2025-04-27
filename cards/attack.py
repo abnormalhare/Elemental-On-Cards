@@ -75,4 +75,4 @@ async def attack(ctx):
     await check_health(ctx, player, opponent)
 
   save()
-  await print_cmd(player, "attack")
+  await print_cmd(player, message.content)

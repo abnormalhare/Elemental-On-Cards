@@ -69,6 +69,7 @@ async def play(ctx):
 
   if not players[player]["is_turn"] and card_stats[card]["Type"] != "Instant":
     await ctx.send("It is not your turn!")
+    return
 
   if card_stats[card]["Type"] in players[player]["has_played"]:
     await ctx.send(
@@ -119,4 +120,4 @@ async def play(ctx):
   await check_health(ctx, player, opponent)
 
   save()
-  await print_cmd(player, "play")
+  await print_cmd(player, message.content)

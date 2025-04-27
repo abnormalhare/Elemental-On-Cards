@@ -20,4 +20,4 @@ async def stats(ctx):
   embed.add_field(name="Level", value=players[player]["level"], inline=False)
 
   await ctx.send(embed=embed)
-  await print_cmd(player, "stats")
+  await print_cmd(player, ctx.message.content)

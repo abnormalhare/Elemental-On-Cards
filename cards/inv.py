@@ -35,4 +35,4 @@ async def inv(ctx):
     embed.add_field(name="Inventory", value=inv_str, inline=False)
 
   await ctx.send(embed=embed)
-  await print_cmd(player, "inv")
+  await print_cmd(player, ctx.message.content)

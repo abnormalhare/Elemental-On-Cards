@@ -32,6 +32,8 @@ async def on_ready():
 
   channel = bot.get_channel(847293815311826954)
   await channel.send("It's time to d-d-d-d-d-duel")
+  channel = bot.get_channel(1365150873088426090)
+  await channel.send("It's time to d-d-d-d-d-duel")
 
 
 async def setup(bot):
