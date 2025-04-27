@@ -79,7 +79,7 @@
     "Defense": null,
     "Description": ""
   },
-  "Flame": {
+  "Campfire": {
     "Type": "Land",
     "Pack": "Earth",
     "Mana": 1,

@@ -127,9 +127,10 @@ def init_player(player_id: int, name: str) -> None:
         "curr_inv": [],
         "hand": [],
         "used": [],
-        "discard": [],
         "has_played": [],
         "attackers_played": [],
+        "discard": [],
+        "exile": [],
         # system info
         "in_duel": False,
         "awaiting_duel": False,
@@ -365,6 +366,24 @@ async def swap_turns(ctx, player: str, opponent: str):
 
   save()
 
+async def inc_level(ctx, player: str):
+  level = players[player]["level"]
+  next_level = 3 * (level * (level + 1)) // 2
+  wins = players[player]["wins"] + (2 * players[player]["tied"] // 3) + (players[player]["lost"] // 3)
+
+  if wins >= next_level:
+    dm = await get_dm(player)
+    players[player]["level"] += 1
+    await ctx.send(f"<@{player}> has leveled up to level {players[player]['level']}!")
+    await dm.send(f"You have leveled up to level {players[player]['level']}!")
+    if players[player]["level"] % 5 == 0:
+      pack_msg = "You have unlocked new packs: "
+      for pack in packs:
+        if players[player]["level"] == packs[pack]:
+          pack_msg += f"{pack}, "
+      pack_msg = pack_msg[:-2] + "!"
+      await ctx.send(pack_msg)
+
 
 async def check_health(ctx, player: str, opponent: str):
   opp_dm = await get_dm(opponent)
@@ -386,6 +405,7 @@ async def check_health(ctx, player: str, opponent: str):
     end_duel(player, opponent)
     players[player]["lost"] += 1
     players[opponent]["won"] += 1
+  await inc_level(ctx, player)
 
 
 async def deal_damage(ctx, player: str, opponent: str, card):
