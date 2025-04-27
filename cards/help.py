@@ -10,7 +10,7 @@ Format: &help <command>
 Displays help for a command. Which is this!
 
 Command List:
-attack, deck, decks, discard, duel, duels, endturn, help, howtoplay, info, inv, newdeck, play, say, stats
+attack, deck, decks, discard, duel, duels, endturn, help, howtoplay, info, inv, newdeck, play, say, stats, stop, update
 """,
   
 "attack":
@@ -79,6 +79,7 @@ Gets information about a card. Useful for checking stats and type.
 "inv":
   """
 Format: &inv
+Aliases: &inventory
 
 Displays your inventory and deck.
   """,
@@ -86,6 +87,7 @@ Displays your inventory and deck.
 "newdeck":
   """
 Format: &newdeck <deck>
+Aliases: &nd
 
 Sets your deck to the specified deck. You can only set decks that are lower level than you.
   """,
@@ -111,6 +113,20 @@ Sends a message to your opponent. Useful for communicating with your opponent.
 Format: &stats
 
 Displays your level and your win/loss/tie ratio.
+  """,
+
+"stop":
+  """
+Format: &stop
+
+Stops the bot. Only @createsource can use this command.
+  """,
+
+"update":
+  """
+Format: &update
+
+Updates the bot. Only @createsource can use this command.
   """,
 }
 
