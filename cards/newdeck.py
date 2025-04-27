@@ -14,6 +14,10 @@ async def newdeck(ctx):
   player = str(author.id)
   split = message.content.split(" ", 1)
 
+  if players[player]["in_duel"]:
+    await ctx.send("You are in a duel! Please end the duel before changing decks.")
+    return
+
   if len(split) < 2:
     await ctx.send("Please specify a deck.")
     return

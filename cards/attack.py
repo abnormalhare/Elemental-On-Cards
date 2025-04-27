@@ -49,7 +49,7 @@ async def attack(ctx):
   
   card = split[1].title()
   if card not in players[player]["used"]:
-    await ctx.send(f"You don't have a **{card}** in your used cards!")
+    await ctx.send(f"You haven't used **{card}**!")
     return
 
   if card_stats[card]["Type"] != "Attacker":
@@ -57,15 +57,17 @@ async def attack(ctx):
     return
 
   attackers_played = players[player]["attackers_played"]
-  if card in attackers_played and players[player]["used"].count(card) < attackers_played.count(card):
-    await ctx.send(f"You have already attacked with **{card}** this turn!")
+  if attackers_played.count(card) >= players[player]["used"].count(card):
+    await ctx.send(f"You have already attacked with all of your **{card}** this turn!")
     return
 
   if all:
     for card in players[player]["used"]:
       if card_stats[card]["Type"] == "Attacker":
+        players[player]["attackers_played"].append(card)
         await deal_damage(ctx, player, opponent, card)
         await check_health(ctx, player, opponent)
+
   else:
     players[player]["attackers_played"].append(card)
     
