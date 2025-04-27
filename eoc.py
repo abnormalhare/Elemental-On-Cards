@@ -17,6 +17,7 @@ from cards import (
 )
 from std.bot import bot
 from std.info import players
+import psutil
 
 
 @bot.event
@@ -72,8 +73,16 @@ async def on_message(message):
   print()
 
 
-token: str | None = os.getenv("TOKEN")
-if token is None:
-  print("No token found")
-  exit()
-bot.run(token)
+if __name__ == "__main__":
+  # check if this program is already running. if it is, kill the other instance
+  for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
+    if proc.info['name'] == 'python.exe' and 'eoc.py' in (proc.info['cmdline'] or []):
+      if proc.info['pid'] != os.getpid():
+        proc.terminate()
+        print(f"Terminated existing instance with PID {proc.info['pid']}")
+  
+  token: str | None = os.getenv("TOKEN")
+  if token is None:
+    print("No token found")
+    exit()
+  bot.run(token)
