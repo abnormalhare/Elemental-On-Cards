@@ -22,3 +22,4 @@ async def say(ctx):
   o_dm = await get_dm(opponent)
   await ctx.send(f"Sent to <@{opponent}>")
   await o_dm.send(f"<@{player}> says: {message.content[5:]}")
+  await print_cmd(player, "say")

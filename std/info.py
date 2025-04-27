@@ -27,7 +27,7 @@ packs = {
 cards = {
     "Air": ["Cloud", "Floating Island", "Falcon", "Gale", "Tornado"],
     "Earth": ["Mound", "Continent", "Mole", "Earthquake", "Landslide"],
-    "Fire": ["Flame", "Volcano", "Phoenix", "Inferno", "Wildfire"],
+    "Fire": ["Campfire", "Volcano", "Phoenix", "Inferno", "Wildfire"],
     "Water": ["Pond", "Delta", "Shark", "Tsunami", "Flood"],
 }
 
@@ -47,7 +47,7 @@ collection = {  # 40 in each deck
         "Landslide": 6
     },
     "Fire": {
-        "Flame": 9,
+        "Campfire": 9,
         "Volcano": 9,
         "Phoenix": 7,
         "Inferno": 7,
@@ -194,6 +194,15 @@ def kill_card(player: str, card: str):
 def increase_mana(player: str, mana: int):
   players[player]["mana"] += mana
   players[player]["curr_mana"] += mana
+
+
+async def print_cmd(player: str, cmd: str):
+  print("CMD: ", cmd)
+  print("NAME:", players[player]["name"])
+  print("HAND:", players[player]["hand"])
+  print("DECK:", players[player]["deck"])
+  print("CURRINV:", players[player]["curr_inv"])
+  print()
 
 
 async def begin_duel(ctx, player: str, opponent: str):

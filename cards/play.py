@@ -10,6 +10,7 @@ from std.info import (
     increase_mana,
     init_player,
     players,
+    print_cmd,
     save,
     use_card,
 )
@@ -118,3 +119,4 @@ async def play(ctx):
   await check_health(ctx, player, opponent)
 
   save()
+  await print_cmd(player, "play")

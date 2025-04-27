@@ -1,5 +1,5 @@
 from std.bot import bot
-from std.info import check_duel, init_player, players, save
+from std.info import check_duel, init_player, players, print_cmd, save
 
 
 @bot.command()
@@ -41,3 +41,4 @@ async def discard(ctx):
 
   players[player]["hand"].remove(card)
   save()
+  await print_cmd(player, "discard")

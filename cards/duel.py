@@ -8,6 +8,7 @@ from std.info import (
     get_searching_players,
     init_player,
     players,
+    print_cmd,
     save,
 )
 
@@ -155,3 +156,4 @@ async def duel(ctx):
   else:
     await duel_player(ctx, player, opponents, split[1])
   save()
+  await print_cmd(player, "duel")

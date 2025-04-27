@@ -1,5 +1,5 @@
 from std.bot import bot
-from std.info import check_duel, init_player, players, swap_turns
+from std.info import check_duel, init_player, players, print_cmd, swap_turns
 
 
 @bot.command()
@@ -29,3 +29,4 @@ async def endturn(ctx):
     return
 
   await swap_turns(ctx, player, opponent)
+  await print_cmd(player, "endturn")

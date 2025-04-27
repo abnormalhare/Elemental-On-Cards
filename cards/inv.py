@@ -1,10 +1,10 @@
 import discord
 
 from std.bot import bot
-from std.info import cards, init_player, packs, players
+from std.info import cards, init_player, packs, players, print_cmd
 
 
-@bot.command()
+@bot.command(aliases=["inventory"])
 async def inv(ctx):
   init_player(ctx.author.id, ctx.author.name)
   author = ctx.author
@@ -35,3 +35,4 @@ async def inv(ctx):
     embed.add_field(name="Inventory", value=inv_str, inline=False)
 
   await ctx.send(embed=embed)
+  await print_cmd(player, "inv")

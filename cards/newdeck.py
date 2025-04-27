@@ -1,7 +1,7 @@
 import random
 
 from std.bot import bot
-from std.info import MAX_CARDS, cards, collection, init_player, packs, players, save
+from std.info import MAX_CARDS, cards, collection, init_player, packs, players, save, print_cmd
 
 
 @bot.command(aliases=["nd"])
@@ -46,3 +46,4 @@ async def newdeck(ctx):
       players[player]["inventory"] += [card] * collection[deck][card]
   save()
   await ctx.send(f"Deck **{deck}** set.")
+  await print_cmd(player, "newdeck")

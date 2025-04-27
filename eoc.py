@@ -69,18 +69,6 @@ async def setup(bot):
   await bot.load_extension("stop")
   await bot.load_extension("update")
 
-@bot.event
-async def on_message(message):
-  await bot.process_commands(message)
-
-  if (str(message.author.id) not in players): return
-  if message.guild is not None: return
-
-  print(f"{message.author.name}: {message.content}")
-  print("-", players[str(message.author.id)]["hand"])
-  print("-", players[str(message.author.id)]["attackers_played"])
-  print()
-
 
 if __name__ == "__main__":
   load_dotenv()

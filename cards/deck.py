@@ -1,14 +1,14 @@
 import discord
 
 from std.bot import bot
-from std.info import card_stats, cards, packs
+from std.info import card_stats, cards, packs, print_cmd
 
 
 @bot.command()
 async def deck(ctx):
   message = ctx.message
   split = message.content.split(" ", 1)
-  embed: discord.Embed
+  embed: discord.Embed | None= None
 
   if len(split) < 2 or split[1].title() not in cards:
     embed = discord.Embed(title="Decks", color=0x00ff00)
@@ -40,3 +40,4 @@ async def deck(ctx):
             inline=False)
 
   await ctx.send(embed=embed)
+  await print_cmd(str(ctx.author.id), "deck")

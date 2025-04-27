@@ -6,6 +6,7 @@ from std.info import (
   deal_damage,
   init_player,
   players,
+  print_cmd,
   save,
 )
 
@@ -72,3 +73,4 @@ async def attack(ctx):
     await check_health(ctx, player, opponent)
 
   save()
+  await print_cmd(player, "attack")

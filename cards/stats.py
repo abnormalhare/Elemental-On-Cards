@@ -1,7 +1,7 @@
 import discord
 
 from std.bot import bot
-from std.info import init_player, players
+from std.info import init_player, players, print_cmd
 
 
 @bot.command()
@@ -20,3 +20,4 @@ async def stats(ctx):
   embed.add_field(name="Level", value=players[player]["level"], inline=False)
 
   await ctx.send(embed=embed)
+  await print_cmd(player, "stats")
