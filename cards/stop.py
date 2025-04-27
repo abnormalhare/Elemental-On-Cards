@@ -1,15 +1,9 @@
-import discord
-
 from std.bot import bot
-from std.info import init_player, players
 import os
-import subprocess
 
 
 @bot.command()
-async def update(ctx):
-  init_player(ctx.author.id, ctx.author.name)
-
+async def stop(ctx):
   author = ctx.author
   
   if author.id != 501430174227759105:
