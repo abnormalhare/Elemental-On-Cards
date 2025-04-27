@@ -1,0 +1,162 @@
+{
+  "Cloud": {
+      "Type": "Land",
+      "Pack": "Air",
+      "Mana": 1,
+      "Attack": null,
+      "Defense": null,
+      "Description": "Birds are very comfortable with clouds. They fly through them, easily confusing the enemy on your army's whereabouts\n\nON PLAY: +1 Mana, **Bounce:** Select any player's attacker from the battlefield to place back in that player's hand.\n- Command Usage: `&play Cloud|<player> <attacker>`"
+  },
+  "Floating Island": {
+      "Type": "Land",
+      "Pack": "Air",
+      "Mana": 2,
+      "Attack": null,
+      "Defense": null,
+    "Description": ""
+  },
+  "Falcon": {
+      "Type": "Attacker",
+      "Pack": "Air",
+      "Mana": 2,
+      "Attack": 3,
+      "Defense": 1,
+    "Description": ""
+  },
+  "Gale": {
+      "Type": "Spell",
+      "Pack": "Air",
+      "Mana": 3,
+      "Attack": 5,
+      "Defense": null,
+    "Description": ""
+  },
+  "Tornado": {
+      "Type": "Instant",
+      "Pack": "Air",
+      "Mana": 5,
+      "Attack": 6,
+      "Defense": null,
+    "Description": ""
+  },
+  "Mound": {
+    "Type": "Land",
+    "Pack": "Earth",
+    "Mana": 1,
+    "Attack": null,
+    "Defense": null,
+    "Description": ""
+  },
+  "Continent": {
+    "Type": "Land",
+    "Pack": "Earth",
+    "Mana": 2,
+    "Attack": null,
+    "Defense": null,
+    "Description": ""
+  },
+  "Mole": {
+    "Type": "Attacker",
+    "Pack": "Earth",
+    "Mana": 2,
+    "Attack": 3,
+    "Defense": 1,
+    "Description": ""
+  },
+  "Earthquake": {
+    "Type": "Spell",
+    "Pack": "Earth",
+    "Mana": 5,
+    "Attack": 7,
+    "Defense": null,
+    "Description": ""
+  },
+  "Landslide": {
+    "Type": "Instant",
+    "Pack": "Earth",
+    "Mana": 4,
+    "Attack": 4,
+    "Defense": null,
+    "Description": ""
+  },
+  "Flame": {
+    "Type": "Land",
+    "Pack": "Earth",
+    "Mana": 1,
+    "Attack": null,
+    "Defense": null,
+    "Speed": null
+  },
+  "Volcano": {
+    "Type": "Land",
+    "Pack": "Fire",
+    "Mana": 2,
+    "Attack": null,
+    "Defense": null,
+    "Speed": null
+  },
+  "Phoenix": {
+    "Type": "Attacker",
+    "Pack": "Fire",
+    "Mana": 3,
+    "Attack": 2,
+    "Defense": 2,
+    "Description": ""
+  },
+  "Inferno": {
+    "Type": "Spell",
+    "Pack": "Fire",
+    "Mana": 5,
+    "Attack": 6,
+    "Defense": null,
+    "Description": ""
+  },
+  "Wildfire": {
+    "Type": "Instant",
+    "Pack": "Fire",
+    "Mana": 3,
+    "Attack": 5,
+    "Defense": null,
+    "Description": ""
+  },
+  "Pond": {
+    "Type": "Land",
+    "Pack": "Earth",
+    "Mana": 1,
+    "Attack": null,
+    "Defense": null,
+    "Speed": null
+  },
+  "Delta": {
+    "Type": "Land",
+    "Pack": "Fire",
+    "Mana": 2,
+    "Attack": null,
+    "Defense": null,
+    "Speed": null
+  },
+  "Shark": {
+    "Type": "Attacker",
+    "Pack": "Fire",
+    "Mana": 3,
+    "Attack": 1,
+    "Defense": 3,
+    "Description": ""
+  },
+  "Tsunami": {
+    "Type": "Spell",
+    "Pack": "Fire",
+    "Mana": 6,
+    "Attack": 7,
+    "Defense": null,
+    "Description": ""
+  },
+  "Flood": {
+    "Type": "Instant",
+    "Pack": "Water",
+    "Mana": 5,
+    "Attack": 6,
+    "Defense": null,
+    "Description": ""
+  }
+}
