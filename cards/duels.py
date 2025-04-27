@@ -15,6 +15,6 @@ async def duels(ctx):
     opponents = get_searching_players()
 
     embed = discord.Embed(title="Duels", color=0x00ff00)
-    embed.add_field(name="Searching Players", value=", ".join(opponents), inline=False)
+    embed.add_field(name="Searching Players", value="<@" + ">, <@".join(opponents) + ">", inline=False)
 
     await ctx.send(embed=embed)
