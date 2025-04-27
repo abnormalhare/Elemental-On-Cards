@@ -14,6 +14,7 @@ packs = {
     "Light": 2,
     "Dark": 2,
     "Nature": 2,
+    "Metal": 2,
     "Lightning": 3,
     "Ice": 3,
     "Wind": 3,
@@ -29,6 +30,10 @@ cards = {
     "Earth": ["Mound", "Continent", "Mole", "Earthquake", "Landslide"],
     "Fire": ["Campfire", "Volcano", "Phoenix", "Inferno", "Wildfire"],
     "Water": ["Pond", "Delta", "Shark", "Tsunami", "Flood"],
+    "Light": ["Coming soon..."],
+    "Dark": ["Coming soon..."],
+    "Nature": ["Coming soon..."],
+    "Metal": ["Coming soon..."],
 }
 
 collection = {  # 40 in each deck
