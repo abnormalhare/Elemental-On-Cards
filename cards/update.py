@@ -16,13 +16,7 @@ async def update(ctx):
 
   # Run the command `go run update.go`
   await ctx.send("Updating...")
-  process = subprocess.Popen(["go", "run", "update.go"])
-
-  # Send the output of the command to the Discord channel
-  if process.returncode == 0:
-    await ctx.send(f"Command executed successfully:\n{process.stdout}")
-  else:
-    await ctx.send(f"Command failed with error:\n{process.stderr}")
+  subprocess.Popen(["go", "run", "update.go"])
 
   # Kill the current process
   await ctx.send("Shutting down the current process...")
