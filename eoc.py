@@ -1,4 +1,7 @@
 import os
+import psutil
+
+from dotenv import load_dotenv
 
 from cards import (
     attack,
@@ -17,7 +20,6 @@ from cards import (
 )
 from std.bot import bot
 from std.info import players
-import psutil
 
 
 @bot.event
@@ -82,6 +84,7 @@ if __name__ == "__main__":
         proc.terminate()
         print(f"Terminated existing instance with PID {proc.info['pid']}")
   
+  load_dotenv()
   token: str | None = os.getenv("TOKEN")
   if token is None:
     print("No token found")
