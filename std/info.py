@@ -63,12 +63,28 @@ collection = {  # 40 in each deck
 }
 
 card_stats: dict
-with open("cards.json", "r") as f:
-  card_stats = json.load(f)
-guilds: list = [os.getenv("MC_HI_CHANNEL"), os.getenv("EAD2_HI_CHANNEL")]
+players: dict
 
-with open("players.json", "r") as f:
-  players = json.load(f)
+try:
+  with open("cards.json", "r") as f:
+    card_stats = json.load(f)
+except FileNotFoundError:
+  print("cards.json not found, ending program")
+  exit(1)
+except Exception as e:
+  print(f"Error loading cards.json: {e}")
+  exit(1)
+
+try:
+  with open("players.json", "r") as f:
+    players = json.load(f)
+except FileNotFoundError:
+  print("cards.json not found, ending program")
+  exit(1)
+except Exception as e:
+  print(f"Error loading cards.json: {e}")
+  exit(1)
+
 MAX_CARDS = 40
 MAX_HEALTH = 30
 PLAYER_COLOR = 0xFF0000

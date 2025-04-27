@@ -17,6 +17,7 @@ from cards import (
     play,
     say,
     stats,
+    stop,
     update,
 )
 from std.bot import bot
@@ -46,6 +47,7 @@ async def setup(bot):
   await bot.add_command(play)
   await bot.add_command(say)
   await bot.add_command(stats)
+  await bot.add_command(stop)
   await bot.add_command(update)
 
   await bot.load_extension("attack")
@@ -61,6 +63,7 @@ async def setup(bot):
   await bot.load_extension("play")
   await bot.load_extension("say")
   await bot.load_extension("stats")
+  await bot.load_extension("stop")
   await bot.load_extension("update")
 
 @bot.event
