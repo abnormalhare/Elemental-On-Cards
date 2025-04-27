@@ -368,7 +368,7 @@ async def swap_turns(ctx, player: str, opponent: str):
 
 async def inc_level(ctx, player: str):
   level = players[player]["level"]
-  next_level = 3 * (level * (level + 1)) // 2
+  next_level = 4 * (level * (level + 1)) // 2
   wins = players[player]["wins"] + (2 * players[player]["tied"] // 3) + (players[player]["lost"] // 3)
 
   if wins >= next_level:
