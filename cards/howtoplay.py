@@ -15,7 +15,7 @@ Here's how to play:
 - You can check your level and win/lose ratio with `&stats`.
 - Use `&duel` to start a duel. You can duel with a specific player by using `&duel <player>`. You can also accept or decline a duel with `&duel accept` or `&duel decline`, or stop looking for a duel with `&duel abort`.
 - Both you and your opponent start with 30 health and 5 cards. You win if your opponent's health reaches 0. You lose if your health reaches 0. If both of your health reaches 0 at the same time, it's a tie. (which currently cant happen!)
-- Use `&play <card>` to play a card. You can only play cards that are in your hand. You can check your hand with `&hand`.
+- Use `&play <card>` to play a card. You can only play cards that are in your hand.
 - There are 4 types of cards: Land, Attacker, Spell, and Instant. Land cards give you mana. Attacker cards deal damage. Spell cards deal damage immediately. Instant cards are like spell cards but can be played once on anyone's turn.
 - Use `&attack <card>` to attack with a card. You can only attack with cards attackers that you have played already.
 - Attackers also prevent damage from all attacks! They can stop all damage from an attack, unless the attack is 5 or more, where they can only stop all but 2 damage.
