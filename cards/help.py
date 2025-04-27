@@ -87,6 +87,8 @@ Displays your inventory and deck.
 "newdeck":
   """
 Format: &newdeck <deck>
+        &newdeck random <deck>
+        &newdeck create <deck> <card1> <amount1> [card] [amount] ...
 Aliases: &nd
 
 Sets your deck to the specified deck. You can only set decks that are lower level than you.

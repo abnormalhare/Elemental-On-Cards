@@ -67,28 +67,23 @@ collection = {  # 40 in each deck
     }
 }
 
-card_stats: dict
-players: dict
+def open_json(file_path: str) -> dict:
+  try:
+    with open(file_path, "r") as f:
+      return json.load(f)
+  except FileNotFoundError:
+    print(f"{file_path} not found, ending program")
+    exit(1)
+  except json.JSONDecodeError:
+    print(f"Error decoding JSON in {file_path}, ending program")
+    exit(1)
+  except Exception as e:
+    print(f"Error loading {file_path}: {e}")
+    exit(1)
 
-try:
-  with open("cards.json", "r") as f:
-    card_stats = json.load(f)
-except FileNotFoundError:
-  print("cards.json not found, ending program")
-  exit(1)
-except Exception as e:
-  print(f"Error loading cards.json: {e}")
-  exit(1)
-
-try:
-  with open("players.json", "r") as f:
-    players = json.load(f)
-except FileNotFoundError:
-  print("cards.json not found, ending program")
-  exit(1)
-except Exception as e:
-  print(f"Error loading cards.json: {e}")
-  exit(1)
+card_stats: dict = open_json("cards.json")
+players: dict = open_json("players.json")
+custom_decks: dict = open_json("custom_decks.json")
 
 MAX_CARDS = 40
 MAX_HEALTH = 30
@@ -204,8 +199,11 @@ def increase_mana(player: str, mana: int):
 async def print_cmd(player: str, cmd: str):
   print("CMD: ", cmd)
   print("NAME:", players[player]["name"])
-  print("HAND:", players[player]["hand"])
   print("DECK:", players[player]["deck"])
+  print("HEALTH:", players[player]["health"])
+  print("MANA:", players[player]["mana"])
+  print("HAND:", players[player]["hand"])
+  print("ATTACKERS:", players[player]["attackers_played"])
   print("CURRINV:", players[player]["curr_inv"])
   print()
 
