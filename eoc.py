@@ -76,7 +76,8 @@ async def on_message(message):
 if __name__ == "__main__":
   # check if this program is already running. if it is, kill the other instance
   for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
-    if proc.info['name'] == 'python.exe' and 'eoc.py' in (proc.info['cmdline'] or []):
+    cmdline = proc.info['cmdline'] or []
+    if proc.info['name'] == 'python.exe' and 'eoc.py' in cmdline:
       if proc.info['pid'] != os.getpid():
         proc.terminate()
         print(f"Terminated existing instance with PID {proc.info['pid']}")
