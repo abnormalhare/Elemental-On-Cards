@@ -85,9 +85,9 @@ async def newdeck(ctx):
     split = split[1].split(" ", 1)
     deck = split[1].title()
 
-  if "Create" in deck[:7]:
-    await newdeck_create(ctx, message)
-    return
+  # if "Create" in deck[:7]:
+  #   await newdeck_create(ctx, message)
+  #   return
 
   if deck not in packs:
     await ctx.send(f"Deck **{deck}** does not exist")
